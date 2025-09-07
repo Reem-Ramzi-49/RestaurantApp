@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Eatsy</string>
+    <string name="welcome_title">Welcome to Eatsy!</string>
+    <string name="welcome_desc">Discover a world of delicious dishes, right at your fingertips</string>
+    <string name="order_title"> Order in Seconds</string>
+    <string name="order_desc">Pick your favorite dish and place your order in just a few simple steps</string>
+    <string name="delivery_title">Fast  Fresh Delivery</string>
+    <string name="delivery_desc">Enjoy tasty meals delivered quickly and with great quality</string>
+    <string name="get_started">GET STARTED</string>
+
+    <string name="login_title">Login to your\nAccount</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="remember_me">Remember me</string>
+    <string name="sign_in">Sign in</string>
+    <string name="forgot_password">Forgot the password?</string>
+    <string name="or_continue">or continue with</string>
+    <string name="no_account">Don’t have an account?</string>
+    <string name="sign_up">Sign up</string>
+
+    <string name="create_account_title">Create your\nAccount</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="name">Name</string>
+
+
+
+</resources>

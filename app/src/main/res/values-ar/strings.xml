@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">إيتسي</string>
+    <string name="welcome_title">🍴 أهلاً بك في إيتسي!</string>
+    <string name="welcome_desc">اكتشف عالماً من الأطباق الشهية، بين يديك مباشرة.</string>
+    <string name="order_title"> اطلب في ثوانٍ</string>
+    <string name="order_desc">اختر وجبتك المفضلة واطلبها بخطوات بسيطة وسريعة.</string>
+    <string name="delivery_title"> توصيل سريع وطازج</string>
+    <string name="delivery_desc">استمتع بوجبات لذيذة تصل إلى باب منزلك بسرعة وجودة عالية.</string>
+    <string name="get_started">ابدأ الآن</string>
+
+    <string name="login_title">تسجيل الدخول إلى\nحسابك</string>
+    <string name="email">البريد الإلكتروني</string>
+    <string name="password">كلمة المرور</string>
+    <string name="remember_me">تذكرني</string>
+    <string name="sign_in">تسجيل الدخول</string>
+    <string name="forgot_password">هل نسيت كلمة المرور؟</string>
+    <string name="or_continue">أو المتابعة عبر</string>
+    <string name="no_account">ليس لديك حساب؟</string>
+    <string name="sign_up">إنشاء حساب</string>
+
+    <string name="create_account_title">إنشاء حسابك</string>
+    <string name="already_have_account">لديك حساب بالفعل؟</string>
+    <string name="name">الاسم</string>
+
+
+</resources>
