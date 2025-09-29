@@ -50,5 +50,19 @@ public class Authentication extends AppCompatActivity {
 
 
 
+        String openTab = getIntent().getStringExtra("open_tab");
+        if (openTab != null && openTab.equals("signup")) {
+             binding.viewPager.setCurrentItem(1, false);
+        }
+
+    }
+
+
+    public void goToSignInTab() {
+        binding.viewPager.setCurrentItem(0, true);
+    }
+
+    public void goToSignUPTab() {
+        binding.viewPager.setCurrentItem(1, true);
     }
 }

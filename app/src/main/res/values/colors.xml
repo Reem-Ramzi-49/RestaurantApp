@@ -3,4 +3,93 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="orange">#FF6F4C</color>
+
+    <color name="background">#FFF4F0</color>
+    <color name="onBackground">#000000</color>
+
+    <color name="gray">#888888</color>
+    <color name="gray_light">#DDDDDD</color>
+
+    <color name="text_primary">#043B3E</color>
+    <color name="text_secondary">#555555</color>
+
+    <color name="editTextBackground">#FFFFFFFF</color>
+
+     <color name="editTextStroke">#EEEEEE</color>
+    <color name="bottom_unselected">#434242</color>
+
+    <color name="bottom_bar_bg">#FFFFFF</color>
+
+    <color name="screen2_background">#FFFFFF</color>
+    <color name="screen2_text_primary">#000000</color>
+    <color name="screen2_text_secondary">#888888</color>
+    <color name="screen2_button_bg">#FF6F4C</color>
+    <color name="screen2_button_text">#FFFFFF</color>
+
+    <color name="rounded_bg">#FFFFFF</color>
+    <color name="rounded_stroke">#CCCCCC</color>
+    <color name="splash_bg">#FF6F4C</color>
+
+    <color name="gradient_start">#FFFFFF</color>
+    <color name="gradient_center">#FFE7CC</color>
+    <color name="gradient_end">#FFB899</color>
+    <color name="circle_bg">#FFFFFF</color>
+    <color name="welcome_text_primary">#000000</color>
+    <color name="welcome_text_highlight">#FF6F4C</color>
+
+    <color name="order_text_primary">#000000</color>
+    <color name="order_text_highlight">#FF6F4C</color>
+
+    <color name="dialog_text_primary">#000000</color>
+
+    <color name="dialog_bg_color">#FFFFFF</color>
+
+    <color name="cart_bg">#F5F2EF</color>
+    <color name="cart_text_primary">#000000</color>
+    <color name="cart_text_secondary">#666666</color>
+    <color name="cart_divider">#CCCCCC</color>
+
+    <color name="card_bg_color">#004D40</color>
+
+    <color name="drinks_bg">#FFFFFF</color>
+    <color name="food_details_bg">#FDF6F2</color>
+    <color name="food_details_text_primary">#000000</color>
+    <color name="food_details_text_secondary">#666666</color>
+    <color name="food_details_button_gray">#AAAAAA</color>
+
+    <color name="orders_bg">#FFF8F5</color>
+    <color name="orders_text_primary">#000000</color>
+    <color name="orders_text_secondary">#666666</color>
+    <color name="orders_line">#DADADA</color>
+    <color name="orders_icon_inactive">#DADADA</color>
+    <color name="profile_bg">#FFF4F0</color>
+    <color name="profile_text_primary">#000000</color>
+    <color name="profile_text_secondary">#888888</color>
+    <color name="profile_icon">#043B3E</color>
+    <color name="profile_danger">#D9534F</color>
+
+    <color name="cart_item_bg">#FFFAFA</color>
+    <color name="cart_item_text_primary">#000000</color>
+    <color name="cart_item_text_secondary">#434141</color>
+
+    <color name="food_card_bg">#FFFFFF</color>
+    <color name="food_card_text_primary">#000000</color>
+    <color name="food_card_text_secondary">#666666</color>
+
+    <color name="order_card_bg">#FFFFFF</color>
+    <color name="order_card_text_primary">#000000</color>
+    <color name="order_card_text_secondary">#666666</color>
+
+    <color name="tab_text_color">#000000</color>
+    <color name="tab_bg_color">#FFFFFF</color>
+
+     <color name="circle_stroke">#1A000000</color>
+
+
+    <color name="orders_card_bg">#FFFFFF</color>
+
+    <color name="logo_tint">#FFFFFF</color>
+
+
+
 </resources>

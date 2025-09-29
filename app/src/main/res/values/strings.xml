@@ -1,14 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Eatsy</string>
-    <string name="welcome_title">Welcome to Eatsy!</string>
+
+     <string name="welcome_title">Welcome to Eatsy!</string>
     <string name="welcome_desc">Discover a world of delicious dishes, right at your fingertips</string>
-    <string name="order_title"> Order in Seconds</string>
+    <string name="order_title">Order in Seconds</string>
     <string name="order_desc">Pick your favorite dish and place your order in just a few simple steps</string>
-    <string name="delivery_title">Fast  Fresh Delivery</string>
+    <string name="delivery_title">Fast Fresh Delivery</string>
     <string name="delivery_desc">Enjoy tasty meals delivered quickly and with great quality</string>
     <string name="get_started">GET STARTED</string>
 
-    <string name="login_title">Login to your\nAccount</string>
+     <string name="login_title">Login to your\nAccount</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="remember_me">Remember me</string>
@@ -18,10 +20,273 @@
     <string name="no_account">Don’t have an account?</string>
     <string name="sign_up">Sign up</string>
 
-    <string name="create_account_title">Create your\nAccount</string>
+     <string name="create_account_title">Create your\nAccount</string>
     <string name="already_have_account">Already have an account?</string>
     <string name="name">Name</string>
+
+     <string name="full_name">Full Name</string>
+    <string name="hint_full_name">Enter your full name</string>
+
+    <string name="hint_email">Enter your email</string>
+
+    <string name="phone_number">Phone Number</string>
+    <string name="hint_phone">Enter your phone</string>
+
+    <string name="address">Address</string>
+    <string name="hint_address">Enter your address</string>
+
+    <string name="hint_password">Enter your password</string>
+
+    <string name="save_changes">Save Changes</string>
+
+
+    <string name="back">Back</string>
+    <string name="lets_you_in">Lets you in</string>
+    <string name="continue_facebook">Continue with Facebook</string>
+    <string name="continue_google">Continue with Google</string>
+    <string name="continue_apple">Continue with Apple</string>
+    <string name="or_divider">────────────    or    ────────────</string>
+    <string name="sign_in_password">Sign in with password</string>
+
+
+    <string name="cart_title">Your Cart</string>
+    <string name="cart_address">1505 Broadway Ct.</string>
+    <string name="cart_prep_time">Preparation Time</string>
+    <string name="cart_prep_time_value">30 minutes</string>
+    <string name="cart_add_more">+ Add more items</string>
+
+    <string name="payment_method">Payment Method</string>
+    <string name="payment_card">VISA **** 0326\nExp 07/26</string>
+
+    <string name="summary">Summary</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="subtotal_value">$13.75</string>
+    <string name="convenience_fee">Convenience Fee</string>
+    <string name="fee_value">$3.99</string>
+    <string name="total">Total</string>
+    <string name="total_value">$17.74</string>
+    <string name="place_order">Place Order</string>
+
+
+    <string name="food_name_example">Pumpkin Spice</string>
+    <string name="food_details_example">Glazed old fashioned pumpkin spice cake donut   •   410 cal</string>
+    <string name="allergen_ingredient">Allergen Ingredient</string>
+    <string name="price">Price</string>
+    <string name="food_price_example">$4.00</string>
+    <string name="minus">-</string>
+    <string name="quantity_example">1</string>
+    <string name="plus">+</string>
+    <string name="add_to_bag">Add to bag</string>
+
+    <string name="search_hint">Search...</string>
+
+
+    <string name="current_order">Current Order</string>
+    <string name="current_order_status">Your order is being prepared!</string>
+    <string name="current_order_time_example">2025-09-22 20:34</string>
+    <string name="past_orders">Past Orders</string>
+
+    <string name="user_name_example">Twonni Mathis</string>
+    <string name="user_role_example">Silver Member</string>
+    <string name="account_settings">Account Settings</string>
+    <string name="favorites">Favorites</string>
+    <string name="notifications">Notifications</string>
+    <string name="help_center">Help Center</string>
+    <string name="sign_out">Sign Out</string>
+
+    <string name="cart_item_quantity_example">2</string>
+    <string name="cart_unit_price_example">$8.00</string>
+    <string name="cart_quantity_example">1</string>
+    <string name="increase">Increase</string>
+
+
+    <string name="rating_example">4.7</string>
+    <string name="food_price_card_example">$5.50</string>
+    <string name="food_name_card_example">Veg Biryani</string>
+    <string name="food_desc_example">Eat Well</string>
+
+
+    <string name="order_title_example">1 Dozen Assorted Donuts</string>
+    <string name="order_total_example">$26.17</string>
+    <string name="order_details_example">Pumpkin Spice Latte</string>
+    <string name="order_date_example">2025-09-22 19:45</string>
+
+    <string name="tab_food">Food</string>
+    <string name="tab_drink">Drink</string>
+    <string name="tab_sweet">Sweet</string>
+
+
+    <string name="category_drinks">Drinks</string>
+    <string name="error_name_required">Name is required</string>
+    <string name="profile_updated_success">Profile updated successfully ✅</string>
+
+
+    <string name="dialog_add_to_cart_title">Add to Cart</string>
+    <string name="dialog_enter_quantity">Enter quantity</string>
+    <string name="dialog_quantity_hint">Quantity</string>
+    <string name="dialog_add">Add</string>
+    <string name="cancel">Cancel</string>
+    <string name="toast_item_added">Item added to cart</string>
+    <string name="error_title">Error</string>
+    <string name="error_item_not_exist">This item does not exist in the menu anymore.</string>
+    <string name="ok">OK</string>
+
+    <string name="category_food">Food</string>
+
+
+    <string name="home">Home</string>
+    <string name="orders">Orders</string>
+    <string name="cart">Cart</string>
+    <string name="profile">Profile</string>
+
+    <string name="status_pending">Status: Pending</string>
+    <string name="status_preparing">Status: Preparing</string>
+    <string name="status_completed">Status: Completed</string>
+    <string name="status_generic">Status: %1$s</string>
+
+    <string name="logout_title">Are you sure?</string>
+    <string name="logout_message">Do you want to sign out?</string>
+    <string name="logout_positive">Sign Out</string>
+    <string name="logout_negative">Cancel</string>
+
+    <string name="error_invalid_email">Enter a valid email</string>
+    <string name="error_empty_password">Enter your password</string>
+    <string name="login_success">Signed in successfully ✅</string>
+    <string name="login_failed">Invalid email or password</string>
+
+
+    <string name="error_password_short">Password must be at least 8 characters</string>
+    <string name="signup_success">Account created successfully ✅</string>
+
+
+    <string name="category_sweets">Sweets</string>
+
+    <string name="logout_cancel">Cancel</string>
+    <string name="logout_confirm">Log out</string>
+
+
+    <!-- Food -->
+    <!-- Food -->
+    <string name="dish_biryani_name">Biryani Rice</string>
+    <string name="dish_biryani_desc">Flavored basmati rice</string>
+
+    <string name="dish_burger_name">Cheese Burger</string>
+    <string name="dish_burger_desc">Juicy beef burger with cheese</string>
+
+    <string name="dish_curry_name">Chicken Curry</string>
+    <string name="dish_curry_desc">Spicy curry</string>
+
+    <string name="dish_pizza_name">Pizza</string>
+    <string name="dish_pizza_desc">Cheesy vegetarian pizza</string>
+
+    <string name="dish_shawarma_name">Shawarma</string>
+    <string name="dish_shawarma_desc">Chicken shawarma wrap</string>
+
+    <string name="dish_pasta_name">Pasta</string>
+    <string name="dish_pasta_desc">Lemony hummus pasta</string>
+
+    <string name="dish_chicken_name">Grilled Chicken</string>
+    <string name="dish_chicken_desc">Juicy grilled chicken breast</string>
+
+    <string name="dish_salad_name">Salad</string>
+    <string name="dish_salad_desc">Pesto caprese salad</string>
+
+    <string name="dish_sushi_name">Sushi</string>
+    <string name="dish_sushi_desc">Japanese sushi platter</string>
+
+    <string name="dish_steak_name">Steak</string>
+    <string name="dish_steak_desc">Baked beef steak</string>
+
+    <string name="dish_fried_rice_name">Fried Rice</string>
+    <string name="dish_fried_rice_desc">Sweet and sour spicy Thai fried rice</string>
+
+    <!-- Drinks -->
+    <string name="dish_orange_juice_name">Orange Juice</string>
+    <string name="dish_orange_juice_desc">Fresh juice</string>
+
+    <string name="dish_coffee_name">Coffee</string>
+    <string name="dish_coffee_desc">Hot espresso</string>
+
+    <string name="dish_latte_name">Latte</string>
+    <string name="dish_latte_desc">Hot coffee with milk</string>
+
+    <string name="dish_cola_name">Coca Cola</string>
+    <string name="dish_cola_desc">Cold soft drink</string>
+
+    <string name="dish_lemonade_name">Lemonade</string>
+    <string name="dish_lemonade_desc">Fresh lemonade</string>
+
+    <string name="dish_mango_juice_name">Mango Juice</string>
+    <string name="dish_mango_juice_desc">Cold mango juice</string>
+
+    <string name="dish_smoothie_name">Strawberry Smoothie</string>
+    <string name="dish_smoothie_desc">Cold strawberry smoothie</string>
+
+    <string name="dish_mint_tea_name">Mint Tea</string>
+    <string name="dish_mint_tea_desc">Refreshing peppermint tea</string>
+
+    <string name="dish_cappuccino_name">Cappuccino</string>
+    <string name="dish_cappuccino_desc">Hot cappuccino with cinnamon</string>
+
+    <string name="dish_milkshake_name">Milkshake</string>
+    <string name="dish_milkshake_desc">Bacon milkshake dessert</string>
+
+    <string name="dish_watermelon_name">Watermelon Juice</string>
+    <string name="dish_watermelon_desc">Fresh watermelon juice</string>
+
+    <!-- Sweets -->
+    <string name="dish_cake_name">Chocolate Cake</string>
+    <string name="dish_cake_desc">Rich and tasty</string>
+
+    <string name="dish_cheesecake_name">Cheesecake</string>
+    <string name="dish_cheesecake_desc">Sweet dessert</string>
+
+    <string name="dish_donut_name">Donut</string>
+    <string name="dish_donut_desc">Sweet chocolate donut</string>
+
+    <string name="dish_cupcake_name">Cupcake</string>
+    <string name="dish_cupcake_desc">Creamy vanilla cupcake</string>
+
+    <string name="dish_baklava_name">Baklava</string>
+    <string name="dish_baklava_desc">Sweet layered pastry with pistachio</string>
+
+    <string name="dish_ice_cream_name">Ice Cream</string>
+    <string name="dish_ice_cream_desc">Homemade Nutella ice cream</string>
+
+    <string name="dish_kunafa_name">Kunafa</string>
+    <string name="dish_kunafa_desc">Traditional kunafa with cheese</string>
+
+    <string name="dish_brownies_name">Brownies</string>
+    <string name="dish_brownies_desc">Chocolate cosmic brownies</string>
+
+    <string name="dish_tiramisu_name">Tiramisu</string>
+    <string name="dish_tiramisu_desc">Classic Italian tiramisu dessert</string>
+
+    <string name="dish_basbousa_name">Basbousa</string>
+    <string name="dish_basbousa_desc">Semolina cake with cream</string>
+
+
+    <string name="google_maps_key" translatable="false">AIzaSyD2a7J4yzlgFla4TQb4IaSwgGT8Ty3HBnE</string>
+
+    <string name="map">Map</string>
+
+    <string name="order_confirm_title">Confirm Order</string>
+    <string name="order_confirm_message">Do you want to place the order now?</string>
+    <string name="order_confirm_yes">Yes</string>
+    <string name="order_confirm_no">No</string>
+    <string name="order_confirm_success">Order sent successfully!</string>
+    <string name="order_empty">Cart is empty</string>
+    <string name="order_pending">Order Confirmed</string>
+    <string name="order_pending_msg">Your order is pending</string>
+    <string name="order_completed">Order Completed</string>
+    <string name="order_completed_msg">Your order is ready</string>
+
+
+     <string name="language">Language</string>
+    <string name="dark_light_mode">Dark / Light Mode</string>
+
 
 
 
 </resources>
+

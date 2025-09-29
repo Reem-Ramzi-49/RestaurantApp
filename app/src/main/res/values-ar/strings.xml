@@ -24,4 +24,258 @@
     <string name="name">الاسم</string>
 
 
+    <string name="full_name">الاسم الكامل</string>
+    <string name="hint_full_name">أدخل اسمك الكامل</string>
+
+     <string name="hint_email">أدخل بريدك الإلكتروني</string>
+
+    <string name="phone_number">رقم الهاتف</string>
+    <string name="hint_phone">أدخل رقم هاتفك</string>
+
+    <string name="address">العنوان</string>
+    <string name="hint_address">أدخل عنوانك</string>
+
+     <string name="hint_password">أدخل كلمة المرور</string>
+    <string name="save_changes">حفظ التغييرات</string>
+
+
+    <string name="back">رجوع</string>
+    <string name="lets_you_in">سجّل دخولك</string>
+    <string name="continue_facebook">المتابعة باستخدام فيسبوك</string>
+    <string name="continue_google">المتابعة باستخدام جوجل</string>
+    <string name="continue_apple">المتابعة باستخدام آبل</string>
+    <string name="or_divider">────────────    أو    ────────────</string>
+    <string name="sign_in_password">تسجيل الدخول بكلمة المرور</string>
+
+
+    <string name="cart_title">سلتك</string>
+    <string name="cart_address">1505 برودواي كورت</string>
+    <string name="cart_prep_time">وقت التحضير</string>
+    <string name="cart_prep_time_value">30 دقيقة</string>
+    <string name="cart_add_more">+ أضف المزيد من الأصناف</string>
+
+    <string name="payment_method">طريقة الدفع</string>
+    <string name="payment_card">فيزا **** 0326\nتنتهي 07/26</string>
+
+    <string name="summary">المجموع</string>
+    <string name="subtotal">الإجمالي الفرعي</string>
+    <string name="subtotal_value">13.75$</string>
+    <string name="convenience_fee">رسوم الخدمة</string>
+    <string name="fee_value">3.99$</string>
+    <string name="total">الإجمالي</string>
+    <string name="total_value">17.74$</string>
+    <string name="place_order">إتمام الطلب</string>
+
+    <string name="food_name_example">بامبكن سبايس</string>
+    <string name="food_details_example">دونات بامبكن سبايس مزجج • 410 سعرة حرارية</string>
+    <string name="allergen_ingredient">مكونات قد تسبب الحساسية</string>
+    <string name="price">السعر</string>
+    <string name="food_price_example">4.00$</string>
+    <string name="minus">-</string>
+    <string name="quantity_example">1</string>
+    <string name="plus">+</string>
+    <string name="add_to_bag">أضف إلى الحقيبة</string>
+
+    <string name="search_hint">ابحث...</string>
+
+    <string name="current_order">الطلب الحالي</string>
+    <string name="current_order_status">طلبك قيد التحضير!</string>
+    <string name="current_order_time_example">2025-09-22 20:34</string>
+    <string name="past_orders">الطلبات السابقة</string>
+
+    <string name="user_name_example">توني ماثيس</string>
+    <string name="user_role_example">عضو فضي</string>
+    <string name="account_settings">إعدادات الحساب</string>
+    <string name="favorites">المفضلة</string>
+    <string name="notifications">الإشعارات</string>
+    <string name="help_center">مركز المساعدة</string>
+    <string name="sign_out">تسجيل الخروج</string>
+
+    <string name="cart_item_quantity_example">٢</string>
+     <string name="cart_unit_price_example">8.00$</string>
+    <string name="cart_quantity_example">١</string>
+    <string name="increase">زيادة</string>
+
+
+    <string name="rating_example">٤٫٧</string>
+    <string name="food_price_card_example">5.50$</string>
+    <string name="food_name_card_example">برياني خضار</string>
+    <string name="food_desc_example">كُل بصحة</string>
+
+    <string name="order_title_example">١ دزينة من الدونات المتنوعة</string>
+    <string name="order_total_example">26.17$</string>
+    <string name="order_details_example">لاتيه بامبكن سبايس</string>
+    <string name="order_date_example">2025-09-22 19:45</string>
+
+    <string name="tab_food">الأطعمة</string>
+    <string name="tab_drink">المشروبات</string>
+    <string name="tab_sweet">الحلويات</string>
+
+    <string name="category_drinks">المشروبات</string>
+    <string name="error_name_required">الاسم مطلوب</string>
+    <string name="profile_updated_success">تم تحديث البروفايل بنجاح ✅</string>
+
+    <string name="dialog_add_to_cart_title">إضافة إلى السلة</string>
+    <string name="dialog_enter_quantity">أدخل الكمية</string>
+    <string name="dialog_quantity_hint">الكمية</string>
+    <string name="dialog_add">إضافة</string>
+    <string name="cancel">إلغاء</string>
+    <string name="toast_item_added">تمت إضافة العنصر إلى السلة</string>
+    <string name="error_title">خطأ</string>
+    <string name="error_item_not_exist">هذا العنصر لم يعد موجودًا في القائمة.</string>
+    <string name="ok">موافق</string>
+
+
+    <string name="category_food">الأطعمة</string>
+
+    <string name="home">الرئيسية</string>
+    <string name="orders">الطلبات</string>
+    <string name="cart">السلة</string>
+    <string name="profile">الملف الشخصي</string>
+
+    <string name="status_pending">الحالة: قيد الانتظار</string>
+    <string name="status_preparing">الحالة: جارٍ التحضير</string>
+    <string name="status_completed">الحالة: مكتمل</string>
+    <string name="status_generic">الحالة: %1$s</string>
+
+    <string name="logout_title">هل أنت متأكد؟</string>
+    <string name="logout_message">هل تريد تسجيل الخروج؟</string>
+    <string name="logout_positive">تسجيل الخروج</string>
+    <string name="logout_negative">إلغاء</string>
+
+    <string name="error_invalid_email">أدخل بريد إلكتروني صحيح</string>
+    <string name="error_empty_password">أدخل كلمة المرور</string>
+    <string name="login_success">تم تسجيل الدخول ✅</string>
+    <string name="login_failed">الإيميل أو كلمة المرور غير صحيحة</string>
+
+         <string name="error_password_short">كلمة المرور يجب أن تكون 8 أحرف على الأقل</string>
+    <string name="signup_success">تم إنشاء الحساب بنجاح ✅</string>
+
+
+    <string name="category_sweets">الحلويات</string>
+
+
+     <string name="logout_cancel">إلغاء</string>
+    <string name="logout_confirm">خروج</string>
+
+
+    <!-- Food -->
+    <string name="dish_biryani_name">أرز برياني</string>
+    <string name="dish_biryani_desc">أرز بسمتي متبّل</string>
+
+    <string name="dish_burger_name">برجر بالجبنة</string>
+    <string name="dish_burger_desc">برجر لحم بقري مع جبنة</string>
+
+    <string name="dish_curry_name">كاري دجاج</string>
+    <string name="dish_curry_desc">كاري حار</string>
+
+    <string name="dish_pizza_name">بيتزا</string>
+    <string name="dish_pizza_desc">بيتزا نباتية بالجبنة</string>
+
+    <string name="dish_shawarma_name">شاورما</string>
+    <string name="dish_shawarma_desc">شاورما دجاج</string>
+
+    <string name="dish_pasta_name">باستا</string>
+    <string name="dish_pasta_desc">باستا بالحمص والليمون</string>
+
+    <string name="dish_chicken_name">دجاج مشوي</string>
+    <string name="dish_chicken_desc">صدر دجاج مشوي طري</string>
+
+    <string name="dish_salad_name">سلطة</string>
+    <string name="dish_salad_desc">سلطة كابريزي بالبيستو</string>
+
+    <string name="dish_sushi_name">سوشي</string>
+    <string name="dish_sushi_desc">طبق سوشي ياباني</string>
+
+    <string name="dish_steak_name">ستيك</string>
+    <string name="dish_steak_desc">ستيك لحم بقري بالفرن</string>
+
+    <string name="dish_fried_rice_name">أرز مقلي</string>
+    <string name="dish_fried_rice_desc">أرز مقلي تايلندي حلو وحار</string>
+
+    <!-- Drinks -->
+    <string name="dish_orange_juice_name">عصير برتقال</string>
+    <string name="dish_orange_juice_desc">عصير طازج</string>
+
+    <string name="dish_coffee_name">قهوة</string>
+    <string name="dish_coffee_desc">إسبريسو ساخن</string>
+
+    <string name="dish_latte_name">لاتيه</string>
+    <string name="dish_latte_desc">قهوة بالحليب</string>
+
+    <string name="dish_cola_name">كوكاكولا</string>
+    <string name="dish_cola_desc">مشروب غازي بارد</string>
+
+    <string name="dish_lemonade_name">ليموناضة</string>
+    <string name="dish_lemonade_desc">ليموناضة طازجة</string>
+
+    <string name="dish_mango_juice_name">عصير مانجو</string>
+    <string name="dish_mango_juice_desc">عصير مانجو بارد</string>
+
+    <string name="dish_smoothie_name">سموثي فراولة</string>
+    <string name="dish_smoothie_desc">سموثي بارد بالفراولة</string>
+
+    <string name="dish_mint_tea_name">شاي بالنعناع</string>
+    <string name="dish_mint_tea_desc">شاي منعش بالنعناع</string>
+
+    <string name="dish_cappuccino_name">كابتشينو</string>
+    <string name="dish_cappuccino_desc">كابتشينو بالقرفة</string>
+
+    <string name="dish_milkshake_name">ميلك شيك</string>
+    <string name="dish_milkshake_desc">ميلك شيك باللحم المقدد</string>
+
+    <string name="dish_watermelon_name">عصير بطيخ</string>
+    <string name="dish_watermelon_desc">عصير بطيخ طازج</string>
+
+    <!-- Sweets -->
+    <string name="dish_cake_name">كيك شوكولاتة</string>
+    <string name="dish_cake_desc">غني ولذيذ</string>
+
+    <string name="dish_cheesecake_name">تشيز كيك</string>
+    <string name="dish_cheesecake_desc">حلوى لذيذة</string>
+
+    <string name="dish_donut_name">دونات</string>
+    <string name="dish_donut_desc">دونات بالشوكولاتة</string>
+
+    <string name="dish_cupcake_name">كب كيك</string>
+    <string name="dish_cupcake_desc">كب كيك بالفانيلا الكريمي</string>
+
+    <string name="dish_baklava_name">بقلاوة</string>
+    <string name="dish_baklava_desc">بقلاوة بالفستق</string>
+
+    <string name="dish_ice_cream_name">آيس كريم</string>
+    <string name="dish_ice_cream_desc">آيس كريم بالنوتيلا</string>
+
+    <string name="dish_kunafa_name">كنافة</string>
+    <string name="dish_kunafa_desc">كنافة بالجبنة</string>
+
+    <string name="dish_brownies_name">براونيز</string>
+    <string name="dish_brownies_desc">براونيز بالشوكولاتة</string>
+
+    <string name="dish_tiramisu_name">تيراميسو</string>
+    <string name="dish_tiramisu_desc">تيراميسو إيطالي كلاسيكي</string>
+
+    <string name="dish_basbousa_name">بسبوسة</string>
+    <string name="dish_basbousa_desc">بسبوسة بالقشطة</string>
+
+
+    <string name="map">الخريطة</string>
+
+    <string name="order_confirm_title">تأكيد الطلب</string>
+    <string name="order_confirm_message">هل تريد إرسال الطلب الآن؟</string>
+    <string name="order_confirm_yes">نعم</string>
+    <string name="order_confirm_no">لا</string>
+    <string name="order_confirm_success">تم إرسال الطلب بنجاح!</string>
+    <string name="order_empty">السلة فارغة</string>
+    <string name="order_pending">تم تأكيد الطلب</string>
+    <string name="order_pending_msg">طلبك قيد الانتظار</string>
+    <string name="order_completed">الطلب مكتمل</string>
+    <string name="order_completed_msg">طلبك جاهز للاستلام</string>
+
+
+     <string name="language">اللغة</string>
+    <string name="dark_light_mode">الوضع الداكن / الفاتح</string>
+
+
+
 </resources>

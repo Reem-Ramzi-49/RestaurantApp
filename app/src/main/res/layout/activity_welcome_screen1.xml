@@ -35,74 +35,69 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.88"/>
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/foodTopLeft"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/circle_white"
-        android:clipToOutline="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/food2"
+        android:src="@drawable/fride_rice"
         android:transitionName="foodTopLeft"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guidelineTop" />
+        app:layout_constraintTop_toTopOf="@id/guidelineTop"
+        app:shapeAppearanceOverlay="@style/CircleImage"/>
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/foodTopRight"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginTop="56dp"
         android:layout_marginEnd="8dp"
-        android:background="@drawable/circle_white"
-        android:clipToOutline="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/food3"
+        android:src="@drawable/stak"
         android:transitionName="foodTopRight"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guidelineTop" />
+        app:layout_constraintTop_toTopOf="@id/guidelineTop"
+        app:shapeAppearanceOverlay="@style/CircleImage"/>
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/foodCenter"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:background="@drawable/circle_white"
         android:scaleType="centerCrop"
-        android:clipToOutline="true"
-        android:src="@drawable/food1"
+        android:src="@drawable/biryani_rice"
         android:transitionName="foodCenter"
         app:layout_constraintTop_toTopOf="@id/guidelineCenter"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:shapeAppearanceOverlay="@style/CircleImage"/>
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/foodLeft"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:background="@drawable/circle_white"
         android:scaleType="centerCrop"
-        android:clipToOutline="true"
-        android:src="@drawable/food4"
+        android:src="@drawable/salad"
         android:transitionName="foodLeft"
         app:layout_constraintTop_toBottomOf="@id/foodCenter"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp"
+        app:shapeAppearanceOverlay="@style/CircleImage"/>
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/foodRight"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="12dp"
-        android:background="@drawable/circle_white"
-        android:clipToOutline="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/food5"
+        android:src="@drawable/ice_cream"
         android:transitionName="foodRight"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/foodCenter" />
+        app:layout_constraintTop_toBottomOf="@id/foodCenter"
+        app:shapeAppearanceOverlay="@style/CircleImage"/>
 
     <TextView
         android:id="@+id/welcomeText"
@@ -111,7 +106,7 @@
         android:layout_marginTop="52dp"
         android:text="@string/welcome_title"
         android:textAlignment="center"
-        android:textColor="@color/orange"
+        android:textColor="@color/welcome_text_highlight"
         android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -126,7 +121,7 @@
         android:text="@string/welcome_desc"
         android:textSize="18sp"
         android:gravity="center"
-        android:textColor="@color/black"
+        android:textColor="@color/welcome_text_primary"
         app:layout_constraintTop_toBottomOf="@id/welcomeText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -141,10 +136,10 @@
         android:text="@string/get_started"
         android:textAllCaps="true"
         android:layout_marginHorizontal="50dp"
-
-        android:backgroundTint="@color/orange"
+        android:backgroundTint="@color/welcome_text_highlight"
         android:textColor="@android:color/white"
-        android:textStyle=" "
+        android:textSize="18dp"
+        app:cornerRadius="10dp"
         app:layout_constraintTop_toTopOf="@id/guidelineBottom"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>

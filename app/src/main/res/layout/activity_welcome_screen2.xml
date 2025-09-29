@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_gradient">
+    android:background="@drawable/bg_gradient"
+    android:fitsSystemWindows="true">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineTop"
@@ -34,77 +35,70 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.88"/>
 
-
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/foodTopLeft"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="124dp"
-        android:background="@drawable/circle_white"
-        android:clipToOutline="true"
         android:scaleType="centerCrop"
         android:src="@drawable/food1"
         android:transitionName="foodTopLeft"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guidelineTop" />
+        app:layout_constraintTop_toTopOf="@id/guidelineTop"
+        app:shapeAppearanceOverlay="@style/CircleImage"/>
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/foodTopRight"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="112dp"
-        android:background="@drawable/circle_white"
-        android:clipToOutline="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/food4"
+        android:src="@drawable/pizza"
         android:transitionName="foodTopRight"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guidelineTop" />
+        app:layout_constraintTop_toTopOf="@id/guidelineTop"
+        app:shapeAppearanceOverlay="@style/CircleImage"/>
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/foodCenter"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:background="@drawable/circle_white"
-        android:clipToOutline="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/food5"
+        android:src="@drawable/img"
         android:transitionName="foodCenter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.943"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guidelineCenter" />
+        app:layout_constraintTop_toTopOf="@id/guidelineCenter"
+        app:shapeAppearanceOverlay="@style/CircleImage"/>
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/foodLeft"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="36dp"
         android:layout_marginTop="64dp"
-        android:background="@drawable/circle_white"
-        android:clipToOutline="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/food2"
+        android:src="@drawable/pasta"
         android:transitionName="foodLeft"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/foodTopLeft" />
+        app:layout_constraintTop_toBottomOf="@+id/foodTopLeft"
+        app:shapeAppearanceOverlay="@style/CircleImage"/>
 
-
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/foodRight"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="92dp"
-        android:background="@drawable/circle_white"
-        android:clipToOutline="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/food3"
+        android:src="@drawable/salad"
         android:transitionName="foodRight"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/foodCenter" />
+        app:layout_constraintTop_toBottomOf="@id/foodCenter"
+        app:shapeAppearanceOverlay="@style/CircleImage"/>
 
     <TextView
         android:id="@+id/titleText"
@@ -113,14 +107,12 @@
         android:layout_marginTop="56dp"
         android:gravity="center"
         android:text="@string/order_title"
-        android:textColor="@color/orange"
+        android:textColor="@color/order_text_highlight"
         android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-
         app:layout_constraintTop_toTopOf="@id/guidelineText" />
 
     <TextView
@@ -130,28 +122,25 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:gravity="center"
-         android:text="@string/order_desc"
-         android:textColor="@color/black"
+        android:text="@string/order_desc"
+        android:textColor="@color/order_text_primary"
         android:textSize="20sp"
-         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginBottom="20dp"
-
-         app:layout_constraintTop_toBottomOf="@id/titleText"
-         android:layout_marginTop="12dp"
-
-
-         />
+        app:layout_constraintTop_toBottomOf="@id/titleText"
+        android:layout_marginTop="12dp" />
 
     <Button
         android:id="@+id/btnGetStarted"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:backgroundTint="@color/orange"
+        android:backgroundTint="@color/order_text_highlight"
         android:text="@string/get_started"
         android:textSize="18sp"
         android:textAllCaps="true"
         android:textColor="@android:color/white"
+        app:cornerRadius="10dp"
         android:layout_marginBottom="40dp"
         android:layout_marginHorizontal="50dp"
         app:layout_constraintEnd_toEndOf="parent"

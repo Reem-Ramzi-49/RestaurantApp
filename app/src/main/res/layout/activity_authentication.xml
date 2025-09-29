@@ -6,18 +6,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:background="?android:attr/colorBackground"
     tools:context=".Authentication">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
-        android:layout_width="0dp"
-        android:backgroundTint="@color/white"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"  />
-
-
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/tab_background"
+        app:tabIndicatorHeight="0dp"
+        app:tabBackground="@drawable/tab_selector"
+        app:tabGravity="fill"
+        app:tabMode="fixed"
+        tools:ignore="MissingConstraints"
+        app:tabTextColor="@color/tab_text_selector"
+        app:tabSelectedTextColor="?attr/colorOnPrimary"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
@@ -26,19 +32,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tabLayout"
-        app:layout_constraintBottom_toBottomOf="parent"
-        />
-
-
-
-
-
-
-
-
-
-
-
-
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,8 +27,7 @@ public class WelcomeScreen2 extends AppCompatActivity {
         setContentView(binding.getRoot());
 
 
-        // زر الانتقال للشاشة 3
-        binding.btnGetStarted.setOnClickListener(v -> {
+         binding.btnGetStarted.setOnClickListener(v -> {
             Intent intent = new Intent(WelcomeScreen2.this, WelcomeScreem3.class);
 
             ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(

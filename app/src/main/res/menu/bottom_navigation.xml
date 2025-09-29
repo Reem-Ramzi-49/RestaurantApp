@@ -2,35 +2,30 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:title="Home"
-        android:icon="@drawable/icon_home"
         android:id="@+id/home_bottom"
-        />
-
-
-
-    <item
-        android:title="Search"
-        android:icon="@drawable/icon_search"
-        android:id="@+id/search_bottom"
-        />
+        android:icon="@drawable/icon_home"
+        android:title="@string/home" />
 
     <item
-        android:title="Cart"
-        android:icon="@drawable/outline_add_shopping_cart_24"
         android:id="@+id/cart_bottom"
-        />
+        android:icon="@drawable/outline_add_shopping_cart_24"
+        android:title="@string/cart" />
 
     <item
-        android:title="Order"
-        android:icon="@drawable/icon_order"
         android:id="@+id/order_bottom"
-        />
+        android:icon="@drawable/icon_order"
+        android:title="@string/orders" />
+
+     <item
+        android:id="@+id/map_bottom"
+        android:icon="@drawable/icons_map"
+        android:title="@string/map" />
 
     <item
-        android:title="Profile"
-        android:icon="@drawable/icon_person"
         android:id="@+id/profile_bottom"
-        />
+        android:icon="@drawable/icon_person"
+        android:title="@string/profile" />
+
+
 
 </menu>

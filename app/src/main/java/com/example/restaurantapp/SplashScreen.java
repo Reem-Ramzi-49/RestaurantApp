@@ -1,6 +1,7 @@
 package com.example.restaurantapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 
@@ -18,15 +19,18 @@ public class SplashScreen extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_splash_screen);
 
-
         new Handler().postDelayed(() -> {
-            Intent intent = new Intent(SplashScreen.this, WelcomeScreen1.class);
-            startActivity(intent);
+              SharedPreferences sp = getSharedPreferences("session", MODE_PRIVATE);
+            boolean loggedIn = sp.getBoolean("logged_in", false);
+
+            if (loggedIn) {
+                 startActivity(new Intent(SplashScreen.this, MainActivity.class));
+            } else {
+                 startActivity(new Intent(SplashScreen.this, WelcomeScreen1.class));
+                         }
+
             finish();
         }, 3000);
-
-
-
 
     }
 }

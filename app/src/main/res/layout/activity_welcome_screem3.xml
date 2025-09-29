@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:background="@drawable/bg_gradient">
 
     <androidx.constraintlayout.widget.Guideline
@@ -34,77 +35,71 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.88"/>
 
-
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/foodTopLeft"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginStart="272dp"
         android:layout_marginTop="84dp"
-        android:background="@drawable/circle_white"
-        android:clipToOutline="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/food1"
+        android:src="@drawable/cake"
         android:transitionName="foodTopLeft"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guidelineTop" />
+        app:layout_constraintTop_toTopOf="@id/guidelineTop"
+        app:shapeAppearanceOverlay="@style/CircleImage"/>
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/foodTopRight"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="228dp"
-        android:background="@drawable/circle_white"
-        android:clipToOutline="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/food4"
+        android:src="@drawable/pasta"
         android:transitionName="foodTopRight"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guidelineTop" />
+        app:layout_constraintTop_toTopOf="@id/guidelineTop"
+        app:shapeAppearanceOverlay="@style/CircleImage"/>
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/foodCenter"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_marginTop="4dp"
-        android:background="@drawable/circle_white"
-        android:clipToOutline="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/food5"
+        android:src="@drawable/pizza"
         android:transitionName="foodCenter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guidelineCenter" />
+        app:layout_constraintTop_toTopOf="@id/guidelineCenter"
+        app:shapeAppearanceOverlay="@style/CircleImage"/>
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/foodLeft"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="80dp"
         android:layout_marginTop="28dp"
-        android:background="@drawable/circle_white"
-        android:clipToOutline="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/food2"
+        android:src="@drawable/salad"
         android:transitionName="foodLeft"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/foodCenter" />
+        app:layout_constraintTop_toBottomOf="@id/foodCenter"
+        app:shapeAppearanceOverlay="@style/CircleImage"/>
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/foodRight"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="36dp"
-        android:background="@drawable/circle_white"
-        android:clipToOutline="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/food3"
+        android:src="@drawable/img_1"
         android:transitionName="foodRight"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/guidelineText" />
+        app:layout_constraintTop_toBottomOf="@id/guidelineText"
+        app:shapeAppearanceOverlay="@style/CircleImage"/>
 
     <TextView
         android:id="@+id/titleText"
@@ -135,20 +130,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titleText" />
+        app:layout_constraintTop_toBottomOf="@id/titleText"/>
 
     <Button
         android:id="@+id/btnGetStarted"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginHorizontal="50dp"
-         android:backgroundTint="@color/orange"
+        android:backgroundTint="@color/orange"
         android:text="@string/get_started"
         android:textAllCaps="true"
         android:textColor="@android:color/white"
-         android:textSize="18dp"
+        android:textSize="18dp"
+        app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guidelineBottom" />
+        app:layout_constraintTop_toTopOf="@id/guidelineBottom"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,29 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/main"
-
-    android:background="@android:color/white">
+    android:fitsSystemWindows="true"
+    android:background="@color/screen2_background">
 
     <ImageView
         android:id="@+id/backIcon"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:src="@drawable/ic_back_arrow"
-        android:contentDescription="Back"
+        app:tint="@color/screen2_text_primary"
+        android:contentDescription="@string/back"
         app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_margin="30dp"
+        android:layout_margin="30dp" />
 
-        />
+
 
     <ImageView
         android:id="@+id/illustration"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:src="@drawable/login_image"
+        android:src="@drawable/login_img"
         app:layout_constraintTop_toBottomOf="@id/backIcon"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,10 +38,10 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Let's you in"
+        android:text="@string/lets_you_in"
         android:textSize="26sp"
         android:textStyle="bold"
-        android:textColor="#000000"
+        android:textColor="@color/screen2_text_primary"
         android:layout_marginTop="12dp"
         app:layout_constraintTop_toBottomOf="@id/illustration"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,22 +59,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-
         <TextView
             android:id="@+id/textFacebook"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            android:text="Continue with Facebook"
-            android:textColor="#000000"
+            android:text="@string/continue_facebook"
+            android:textColor="@color/screen2_text_primary"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.222"
             app:layout_constraintStart_toEndOf="@id/iconFacebook"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/iconFacebook"
@@ -83,7 +84,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.583" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -113,16 +113,15 @@
             android:id="@+id/textGoogle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Continue with Google"
+            android:text="@string/continue_google"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:textColor="#000000"
+            android:textColor="@color/screen2_text_primary"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/iconGoogle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.222"
-
             android:layout_marginEnd="16dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -145,7 +144,6 @@
             android:src="@drawable/ic_apple"
             android:layout_marginStart="72dp"
             android:layout_marginEnd="8dp"
-
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.583"
@@ -155,12 +153,11 @@
             android:id="@+id/textApple"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Continue with Apple"
+            android:text="@string/continue_apple"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:textColor="#000000"
+            android:textColor="@color/screen2_text_primary"
             app:layout_constraintHorizontal_bias="0.222"
-
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/iconApple"
@@ -172,27 +169,26 @@
         android:id="@+id/divider"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="────────────    or    ────────────"
-        android:textColor="#888888"
+        android:text="@string/or_divider"
+        android:textColor="@color/screen2_text_secondary"
         android:textSize="14sp"
         android:layout_marginTop="24dp"
         app:layout_constraintTop_toBottomOf="@id/btnApple"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-
     <Button
-
         android:id="@+id/btnPassword"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginTop="12dp"
-        android:backgroundTint="@color/orange"
+        android:backgroundTint="@color/screen2_button_bg"
         android:elevation="4dp"
-        android:text="Sign in with password"
-        android:textSize="18dp"
-        android:textColor="#FFFFFF"
+        android:text="@string/sign_in_password"
+        android:textSize="18sp"
+        android:textColor="@color/screen2_button_text"
         android:layout_marginHorizontal="40dp"
+        app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -204,8 +200,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
         android:layout_marginTop="8dp"
-        android:text="Don't have an account?"
-        android:textColor="#888888"
+        android:text="@string/no_account"
+        android:textColor="@color/screen2_text_secondary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnPassword" />
 
@@ -213,8 +209,8 @@
         android:id="@+id/signUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign up"
-        android:textColor="@color/orange"
+        android:text="@string/sign_up"
+        android:textColor="@color/screen2_button_bg"
         android:textStyle="bold"
         android:layout_marginStart="8dp"
         app:layout_constraintTop_toTopOf="@id/bottomText"
