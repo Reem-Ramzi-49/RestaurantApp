@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="orange">#FF6F4C</color>
+
+    <!-- الوضع الليلي -->
+    <color name="background">#121212</color>
+    <color name="onBackground">#FFFFFF</color>
+
+    <color name="gray">#BBBBBB</color>
+    <color name="gray_light">#444444</color>
+
+
+    <color name="editTextBackground">#2C2C2C</color>
+
+
+     <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#BBBBBB</color>
+
+     <color name="editTextStroke">#444444</color>
+
+    <color name="bottom_unselected">#BBBBBB</color>
+
+
+    <color name="bottom_bar_bg">#313030</color>
+
+    <color name="screen2_background">#121212</color>
+    <color name="screen2_text_primary">#FFFFFF</color>
+    <color name="screen2_text_secondary">#AAAAAA</color>
+    <color name="screen2_button_bg">#FF6F4C</color>
+    <color name="screen2_button_text">#FFFFFF</color>
+
+    <color name="rounded_bg">#2C2C2C</color>
+    <color name="rounded_stroke">#444444</color>
+    <color name="splash_bg">#121212</color>
+
+    <color name="gradient_start">#121212</color>
+    <color name="gradient_center">#2C2C2C</color>
+    <color name="gradient_end">#444444</color>
+    <color name="circle_bg">#2C2C2C</color>
+
+    <color name="welcome_text_primary">#FFFFFF</color>
+    <color name="welcome_text_highlight">#FF6F4C</color>
+
+    <color name="order_text_primary">#FFFFFF</color>
+    <color name="order_text_highlight">#FF6F4C</color>
+
+    <color name="dialog_text_primary">#FFFFFF</color>
+
+    <color name="dialog_bg_color">#2C2C2C</color>
+
+    <color name="cart_bg">#121212</color>
+    <color name="cart_text_primary">#FFFFFF</color>
+    <color name="cart_text_secondary">#AAAAAA</color>
+    <color name="cart_divider">#444444</color>
+
+
+    <color name="drinks_bg">#121212</color>
+    <color name="food_details_bg">#121212</color>
+    <color name="food_details_text_primary">#FFFFFF</color>
+    <color name="food_details_text_secondary">#BBBBBB</color>
+    <color name="food_details_button_gray">#444444</color>
+
+    <color name="orders_bg">#121212</color>
+    <color name="orders_text_primary">#FFFFFF</color>
+    <color name="orders_text_secondary">#AAAAAA</color>
+    <color name="orders_line">#444444</color>
+    <color name="orders_icon_inactive">#444444</color>
+
+    <color name="profile_bg">#121212</color>
+    <color name="profile_text_primary">#FFFFFF</color>
+    <color name="profile_text_secondary">#AAAAAA</color>
+    <color name="profile_icon">#BBBBBB</color>
+    <color name="profile_danger">#FF6B6B</color>
+
+
+
+<!--    <color name="cart_item_bg">#1E1E1E</color>-->
+<!--    <color name="cart_item_text_primary">#FFFFFF</color>-->
+<!--    <color name="cart_item_text_secondary">#AAAAAA</color>-->
+
+    <color name="food_card_bg">#1E1E1E</color>
+    <color name="food_card_text_primary">#FFFFFF</color>
+    <color name="food_card_text_secondary">#BBBBBB</color>
+
+    <color name="order_card_bg">#1E1E1E</color>
+    <color name="order_card_text_primary">#FFFFFF</color>
+    <color name="order_card_text_secondary">#BBBBBB</color>
+
+    <color name="tab_text_color">#FFFFFF</color>
+    <color name="tab_bg_color">#2C2C2C</color>
+
+    <color name="circle_stroke">#444444</color>
+
+
+
+    <color name="cart_item_bg">#2C2C2C</color> <!-- رمادي غامق بدال الأسود الكامل -->
+    <color name="cart_item_text_primary">#FFFFFF</color>
+    <color name="cart_item_text_secondary">#AAAAAA</color>
+
+
+
+    <color name="orders_card_bg">#2C2C2C</color>
+
+    <color name="logo_tint">#FF6F4C</color>
+
+
+</resources>

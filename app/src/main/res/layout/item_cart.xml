@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    app:cardCornerRadius="18dp"
+    app:cardElevation="6dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="@color/cart_item_bg"
+        android:gravity="center_vertical">
+
+         <TextView
+            android:id="@+id/cartItemQuantityCircle"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/circle_white"
+            android:gravity="center"
+            android:text="@string/cart_item_quantity_example"
+            android:textColor="@color/cart_item_text_secondary"
+            android:textStyle="bold"
+            android:textSize="16sp" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/cartFoodImage"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="14dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/food1"
+            app:shapeAppearanceOverlay="@style/CircularImage" />
+
+
+         <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/cartFoodName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/food_name_example"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/cart_item_text_primary" />
+
+            <TextView
+                android:id="@+id/cartUnitPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cart_unit_price_example"
+                android:layout_marginTop="4dp"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="@color/cart_item_text_primary" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="6dp"
+                android:gravity="center_vertical">
+
+                <ImageButton
+                    android:id="@+id/btnDecrease"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/bg_circle_white"
+                    android:src="@drawable/ic_minus"
+                    app:tint="@color/orange" />
+
+                <TextView
+                    android:id="@+id/cartQuantity"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/cart_quantity_example"
+                    android:textSize="16sp"
+                    android:textColor="@color/cart_item_text_primary" />
+
+                <ImageButton
+                    android:id="@+id/btnIncrease"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/bg_circle_white"
+                    android:src="@drawable/ic_plus"
+                    app:tint="@color/orange"
+                    android:contentDescription="@string/increase" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btnDelete"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="10dp"
+            android:src="@drawable/icon_delete"
+            android:background="@drawable/bg_circle_white"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
