@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Eatsy</string>
 
-     <string name="welcome_title">Welcome to Eatsy!</string>
+    <string name="welcome_title">Welcome to Eatsy!</string>
     <string name="welcome_desc">Discover a world of delicious dishes, right at your fingertips</string>
     <string name="order_title">Order in Seconds</string>
     <string name="order_desc">Pick your favorite dish and place your order in just a few simple steps</string>
@@ -10,7 +10,7 @@
     <string name="delivery_desc">Enjoy tasty meals delivered quickly and with great quality</string>
     <string name="get_started">GET STARTED</string>
 
-     <string name="login_title">Login to your\nAccount</string>
+    <string name="login_title">Login to your\nAccount</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="remember_me">Remember me</string>
@@ -20,11 +20,11 @@
     <string name="no_account">Don’t have an account?</string>
     <string name="sign_up">Sign up</string>
 
-     <string name="create_account_title">Create your\nAccount</string>
+    <string name="create_account_title">Create your\nAccount</string>
     <string name="already_have_account">Already have an account?</string>
     <string name="name">Name</string>
 
-     <string name="full_name">Full Name</string>
+    <string name="full_name">Full Name</string>
     <string name="hint_full_name">Enter your full name</string>
 
     <string name="hint_email">Enter your email</string>
@@ -282,9 +282,63 @@
     <string name="order_completed_msg">Your order is ready</string>
 
 
-     <string name="language">Language</string>
+    <string name="language">Language</string>
     <string name="dark_light_mode">Dark / Light Mode</string>
 
+    <string name="orders_management_title">Orders Management</string>
+    <string name="order_confirmed">Order confirmed</string>
+    <string name="order_deleted">Order deleted</string>
+    <string name="dialog_manage_order">Manage Order</string>
+    <string name="dialog_confirm">Confirm</string>
+    <string name="dialog_complete">Complete</string>
+    <string name="dialog_delete">Delete</string>
+    <string name="dialog_cancel">Cancel</string>
+
+    <string name="dialog_user">User</string>
+    <string name="dialog_status">Status</string>
+
+
+    <string name="order_confirmed_title">Order Confirmation</string>
+    <string name="order_completed_title">Order Completed</string>
+    <string name="order_confirmed_msg">Hello %1$s, your order has been confirmed ✅</string>
+    <string name="order_completed_msg1">Hello %1$s, your order has been completed ✅</string>
+
+    <string name="channel_orders">Orders Notifications</string>
+
+    <string name="dish_image">Dish Image</string>
+    <string name="choose_image">Choose Image</string>
+    <string name="dish_name">Dish Name</string>
+    <string name="dish_description">Description</string>
+    <string name="dish_price">Price</string>
+    <string name="save_dish">Save</string>
+
+    <!-- النصوص الظاهرة للمستخدم -->
+    <string-array name="dish_categories_display">
+        <item>@string/tab_food</item>
+        <item>@string/tab_drink</item>
+        <item>@string/tab_sweet</item>
+    </string-array>
+
+
+    <string-array name="dish_categories_values">
+        <item>Food</item>
+        <item>Drinks</item>
+        <item>Sweets</item>
+    </string-array>
+
+    <string name="choose_image_method">Choose image method</string>
+    <string name="pick_from_gallery">Pick from Gallery</string>
+    <string name="enter_image_url">Enter image URL</string>
+    <string name="enter_url_hint">https://example.com/image.jpg</string>
+
+    <string name="fill_all_fields">Please fill all fields</string>
+    <string name="dish_added">Dish added successfully</string>
+
+
+    <string name="edit_dish">Edit Dish</string>
+    <string name="image_url">Image URL (Optional)</string>
+    <string name="dish_category">Category</string>
+    <string name="update_dish">Update</string>
 
 
 

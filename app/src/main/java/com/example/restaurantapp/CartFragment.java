@@ -6,8 +6,6 @@ import android.app.NotificationManager;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -83,42 +81,40 @@ public class CartFragment extends Fragment {
             binding.cartTotal.setText(String.format("$%.2f", total));
         });
 
-         binding.btnPlaceOrder.setOnClickListener(v -> {
+        binding.btnPlaceOrder.setOnClickListener(v -> {
             if (adapter.getItemCount() == 0) {
                 Toast.makeText(getContext(), getString(R.string.order_empty), Toast.LENGTH_SHORT).show();
                 return;
             }
 
-             View dialogView = LayoutInflater.from(getContext()).inflate(R.layout.dialog_confirm_order, null);
+            View dialogView = LayoutInflater.from(getContext()).inflate(R.layout.dialog_confirm_order, null);
 
-             AlertDialog dialog = new AlertDialog.Builder(getContext(), R.style.CustomDialog)
-                     .setView(dialogView)
-                     .create();
+            AlertDialog dialog = new AlertDialog.Builder(getContext(), R.style.CustomDialog)
+                    .setView(dialogView)
+                    .create();
 
-
-             Button btnCancel = dialogView.findViewById(R.id.btnCancel);
+            Button btnCancel = dialogView.findViewById(R.id.btnCancel);
             Button btnConfirm = dialogView.findViewById(R.id.btnConfirm);
 
             btnCancel.setOnClickListener(view -> dialog.dismiss());
 
             btnConfirm.setOnClickListener(view -> {
-                 viewModel.placeOrderNow("pending");
+                int userId = SignInFragment.SessionManager.getUserId(requireContext());
+                 viewModel.placeOrderNow("pending", userId);
 
-                 showNotification(
+                showNotification(
                         1001,
                         getString(R.string.order_pending),
                         getString(R.string.order_pending_msg),
                         R.drawable.icon_cart
                 );
 
-                 BottomNavigationView bottomNav = requireActivity().findViewById(R.id.bottomNavigation);
+                BottomNavigationView bottomNav = requireActivity().findViewById(R.id.bottomNavigation);
                 bottomNav.setSelectedItemId(R.id.order_bottom);
 
-                 simulateOrderStatusFlow();
+                viewModel.clearCart();
 
-                 viewModel.clearCart();
-
-                 Toast.makeText(getContext(), getString(R.string.order_confirm_success), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), getString(R.string.order_confirm_success), Toast.LENGTH_SHORT).show();
 
                 dialog.dismiss();
             });
@@ -160,52 +156,6 @@ public class CartFragment extends Fragment {
             );
             NotificationManager manager = requireContext().getSystemService(NotificationManager.class);
             manager.createNotificationChannel(channel);
-        }
-    }
-
-    private void simulateOrderStatusFlow() {
-        viewModel.getAllOrders().observe(getViewLifecycleOwner(), orders -> {
-            if (orders != null && !orders.isEmpty()) {
-                Entity_Orders latest = orders.get(orders.size() - 1);
-                int orderId = latest.getOrder_id();
-
-                Handler handler = new Handler(Looper.getMainLooper());
-
-                handler.postDelayed(() -> {
-                    viewModel.updateOrderStatus(orderId, "preparing");
-                }, 3000);
-
-                handler.postDelayed(() -> {
-                    viewModel.updateOrderStatus(orderId, "completed");
-                    showNotification(
-                            1002,
-                            getString(R.string.order_completed),
-                            getString(R.string.order_completed_msg),
-                            R.drawable.icon_bag
-                    );
-                }, 6000);
-
-                handler.postDelayed(() -> {
-                    viewModel.updateOrderStatus(orderId, "pending");
-                }, 16000);
-            }
-        });
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
-                                           @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-
-        if (requestCode == REQUEST_CODE_NOTIFICATIONS
-                && grantResults.length > 0
-                && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-            showNotification(
-                    1001,
-                    getString(R.string.order_pending),
-                    getString(R.string.order_pending_msg),
-                    R.drawable.icon_cart
-            );
         }
     }
 }

@@ -18,7 +18,7 @@ import java.util.concurrent.Executors;
                 Entity_Cart.class,
                 Entity_Orders.class
         },
-        version = 2,
+        version = 1,
         exportSchema = false
 )
 public abstract class AppDatabase extends RoomDatabase {
@@ -52,7 +52,19 @@ public abstract class AppDatabase extends RoomDatabase {
                                         DishesDao dao = INSTANCE.dishesDao();
                                         dao.deleteAllDishes();
 
-                                         dao.insertDish(new Entity_Dishes(
+                                        UsersDao usersDao = INSTANCE.usersDao();
+                                        usersDao.insertUser(new Entity_Users(
+                                                "Admin",
+                                                "admin@gmail.com",
+                                                "12345678",
+                                                "0000000000",
+                                                "HQ",
+                                                null
+                                        ) {{
+                                            setRole(1);
+                                        }});
+
+                                        dao.insertDish(new Entity_Dishes(
                                                 R.string.dish_biryani_name, "Biryani Rice",
                                                 "Food",
                                                 R.string.dish_biryani_desc, "Flavored basmati rice",
@@ -109,7 +121,7 @@ public abstract class AppDatabase extends RoomDatabase {
                                                 true));
 
                                         dao.insertDish(new Entity_Dishes(
-                                                R.string.dish_salad_name, "Salad",
+                                                R.string.dish_salad_name, "SALAD",
                                                 "Food",
                                                 R.string.dish_salad_desc, "Pesto caprese salad",
                                                 5.00,
@@ -140,7 +152,7 @@ public abstract class AppDatabase extends RoomDatabase {
                                                 "https://fullofplants.com/wp-content/uploads/2020/05/sweet-and-sour-spicy-thai-fried-rice-easy-vegan-meal-with-vegetables-1.jpg",
                                                 true));
 
-                                         dao.insertDish(new Entity_Dishes(
+                                        dao.insertDish(new Entity_Dishes(
                                                 R.string.dish_orange_juice_name, "Orange Juice",
                                                 "Drinks",
                                                 R.string.dish_orange_juice_desc, "Fresh juice",

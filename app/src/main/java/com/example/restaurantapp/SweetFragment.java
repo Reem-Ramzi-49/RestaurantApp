@@ -32,8 +32,11 @@ public class SweetFragment extends Fragment {
             Bundle bundle = new Bundle();
             bundle.putInt("dishId", dish.getDish_id());
 
-            bundle.putString("name", getString(dish.getNameResId()));
-            bundle.putString("desc", getString(dish.getDescResId()));
+             bundle.putInt("nameRes", dish.getNameResId());
+            bundle.putInt("descRes", dish.getDescResId());
+
+             bundle.putString("name", dish.getNameText());
+            bundle.putString("desc", dish.getDescText());
 
             bundle.putDouble("price", dish.getPrice());
             bundle.putInt("imageRes", dish.getImageInt());

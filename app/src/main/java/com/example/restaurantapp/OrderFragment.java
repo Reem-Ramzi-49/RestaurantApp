@@ -2,12 +2,11 @@ package com.example.restaurantapp;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
@@ -31,49 +30,63 @@ public class OrderFragment extends Fragment {
         binding = FragmentOrderBinding.inflate(inflater, container, false);
         viewModel = new ViewModelProvider(requireActivity()).get(AppViewModel.class);
 
-        // RecyclerView for past orders
-        adapter = new AdapterOrders();
         binding.recyclerOrders.setLayoutManager(new LinearLayoutManager(getContext()));
-        binding.recyclerOrders.setAdapter(adapter);
 
-         viewModel.getAllOrders().observe(getViewLifecycleOwner(), orders -> {
-            adapter.setOrders(orders);
+        int userId = SignInFragment.SessionManager.getUserId(requireContext());
 
-            if (orders != null && !orders.isEmpty()) {
-                 Entity_Orders current = orders.get(0);
-                binding.currentOrderCard.setVisibility(View.VISIBLE);
+        viewModel.getUserById(userId).observe(getViewLifecycleOwner(), user -> {
+            if (user != null) {
+                if (user.getRole() == 1) {
+                    // ✅ أدمن
+                    adapter = new AdapterOrders((AdapterOrders.OnAdminOrderClickListener) order -> {
+                        new androidx.appcompat.app.AlertDialog.Builder(requireContext())
+                                .setTitle("إدارة الطلب #" + order.getDisplay_number())
+                                .setMessage("المستخدم: " + order.getUserName() + "\nالحالة: " + order.getStatus())
+                                .setPositiveButton("تأكيد", (dialog, which) -> {
+                                    viewModel.updateOrderStatus(order.getOrder_id(), "confirmed");
+                                    Toast.makeText(getContext(), "تم تأكيد الطلب ✅", Toast.LENGTH_SHORT).show();
+                                })
+                                .setNeutralButton("اكتمال", (dialog, which) -> {
+                                    viewModel.updateOrderStatus(order.getOrder_id(), "completed");
+                                    Toast.makeText(getContext(), "تم اكتمال الطلب ✅", Toast.LENGTH_SHORT).show();
+                                })
+                                .setNegativeButton("حذف", (dialog, which) -> {
+                                    viewModel.deleteOrder(order.getOrder_id());
+                                    Toast.makeText(getContext(), "تم حذف الطلب ❌", Toast.LENGTH_SHORT).show();
+                                })
+                                .show();
+                    });
 
-                Log.d("ORDER_FLOW", "UI received status = " + current.getStatus());
+                    binding.recyclerOrders.setAdapter(adapter);
 
-                updateOrderUI(current.getStatus(), current.getOrder_date());
+                    viewModel.getAllOrdersWithUser().observe(getViewLifecycleOwner(), orders -> {
+                        adapter.setOrdersWithUser(orders);
+                    });
 
-                 if ("pending".equalsIgnoreCase(current.getStatus())) {
-                    startOrderSimulation(current.getOrder_id());
+                } else {
+                    // ✅ مستخدم عادي
+                    adapter = new AdapterOrders((AdapterOrders.OnOrderClickListener) null);
+                    binding.recyclerOrders.setAdapter(adapter);
+
+                    viewModel.getOrdersByUser(userId).observe(getViewLifecycleOwner(), orders -> {
+                        adapter.setOrders(orders);
+
+                        if (orders != null && !orders.isEmpty()) {
+                            Entity_Orders current = orders.get(0);
+                            binding.currentOrderCard.setVisibility(View.VISIBLE);
+
+                            Log.d("ORDER_FLOW", "UI received status = " + current.getStatus());
+                            updateOrderUI(current.getStatus(), current.getOrder_date());
+                        } else {
+                            binding.currentOrderCard.setVisibility(View.GONE);
+                        }
+                    });
                 }
-
-            } else {
-                Log.d("ORDER_FLOW", "No orders found.");
-                binding.currentOrderCard.setVisibility(View.VISIBLE);
-                updateOrderUI("pending", "");
             }
         });
 
         return binding.getRoot();
     }
-
-    private void startOrderSimulation(int orderId) {
-        Handler handler = new Handler(Looper.getMainLooper());
-
-        //
-        handler.postDelayed(() -> {
-            viewModel.updateOrderStatus(orderId, "preparing");
-        }, 5000);
-
-         handler.postDelayed(() -> {
-            viewModel.updateOrderStatus(orderId, "completed");
-        }, 6000);
-    }
-
 
     private void updateOrderUI(String status, String orderDate) {
         int orange = ContextCompat.getColor(requireContext(), R.color.orange);
@@ -94,15 +107,15 @@ public class OrderFragment extends Fragment {
                 binding.iconBag.setColorFilter(gray);
                 break;
 
-            case "preparing":
-                binding.currentOrderStatus.setText(getString(R.string.status_preparing));
+            case "confirmed":
+                binding.currentOrderStatus.setText("Confirmed");
                 binding.currentOrderStatus.setTextColor(orange);
                 binding.currentOrderStatus.setTypeface(null, Typeface.BOLD);
 
                 binding.iconCart.setColorFilter(orange);
                 binding.lineCartToBowl.setBackgroundColor(orange);
                 binding.iconBowl.setColorFilter(orange);
-                binding.lineBowlToBag.setBackgroundColor(orange);
+                binding.lineBowlToBag.setBackgroundColor(gray);
                 binding.iconBag.setColorFilter(gray);
                 break;
 

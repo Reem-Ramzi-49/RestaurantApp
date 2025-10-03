@@ -24,15 +24,8 @@ public interface DishesDao {
     @Query("SELECT * FROM dishes WHERE category = :category ORDER BY name_text ASC")
     LiveData<List<Entity_Dishes>> getDishesByCategory(String category);
 
-    @Query("SELECT * FROM dishes " +
-            "WHERE LOWER(name_text) LIKE LOWER(:keyword) || '%' " +
-            "OR LOWER(desc_text) LIKE LOWER(:keyword) || '%'")
-    LiveData<List<Entity_Dishes>> searchDishes(String keyword);
-
-    @Query("SELECT * FROM dishes " +
-            "WHERE category = :category " +
-            "AND (LOWER(name_text) LIKE LOWER(:keyword) || '%' " +
-            "OR LOWER(desc_text) LIKE LOWER(:keyword) || '%')")
+     @Query("SELECT * FROM dishes WHERE category = :category " +
+            "AND LOWER(name_text) LIKE LOWER(:keyword) || '%'")
     LiveData<List<Entity_Dishes>> searchDishesByCategory(String category, String keyword);
 
     @Query("SELECT * FROM dishes WHERE dish_id = :dishId LIMIT 1")

@@ -29,12 +29,17 @@ public class FoodFragment extends Fragment {
         binding = FragmentFoodBinding.inflate(inflater, container, false);
         viewModel = new ViewModelProvider(requireActivity()).get(AppViewModel.class);
 
-         AdapterMenu adapter = new AdapterMenu(new ArrayList<>(), dish -> {
+        AdapterMenu adapter = new AdapterMenu(new ArrayList<>(), dish -> {
             Bundle bundle = new Bundle();
             bundle.putInt("dishId", dish.getDish_id());
 
-             bundle.putString("name", getString(dish.getNameResId()));
-            bundle.putString("desc", getString(dish.getDescResId()));
+            // ✅ نمرر resId
+            bundle.putInt("nameRes", dish.getNameResId());
+            bundle.putInt("descRes", dish.getDescResId());
+
+            // ✅ نمرر النصوص كـ fallback
+            bundle.putString("name", dish.getNameText());
+            bundle.putString("desc", dish.getDescText());
 
             bundle.putDouble("price", dish.getPrice());
             bundle.putInt("imageRes", dish.getImageInt());
@@ -49,10 +54,11 @@ public class FoodFragment extends Fragment {
                     .commit();
         });
 
-         binding.recyclerFood.setLayoutManager(new GridLayoutManager(getContext(), 2));
+        binding.recyclerFood.setLayoutManager(new GridLayoutManager(getContext(), 2));
         binding.recyclerFood.setAdapter(adapter);
 
-         viewModel.getSearchQuery().observe(getViewLifecycleOwner(), keyword -> {
+        // 🔍 البحث أو العرض العادي
+        viewModel.getSearchQuery().observe(getViewLifecycleOwner(), keyword -> {
             if (keyword != null && !keyword.isEmpty()) {
                 viewModel.searchDishesByCategory("Food", keyword)
                         .observe(getViewLifecycleOwner(), adapter::setDishes);

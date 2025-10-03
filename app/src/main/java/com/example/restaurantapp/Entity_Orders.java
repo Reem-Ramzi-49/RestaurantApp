@@ -22,14 +22,24 @@ public class Entity_Orders {
     @ColumnInfo(name = "items_count")
     private int items_count;
 
-    public Entity_Orders(String order_date, String status, double total_price, int items_count) {
+    @ColumnInfo(name = "user_id")
+    private int user_id;
+
+    // ✅ رقم العرض يبدأ من 1 لكل مستخدم
+    @ColumnInfo(name = "display_number")
+    private int display_number;
+
+    public Entity_Orders(String order_date, String status, double total_price,
+                         int items_count, int user_id, int display_number) {
         this.order_date = order_date;
         this.status = status;
         this.total_price = total_price;
         this.items_count = items_count;
+        this.user_id = user_id;
+        this.display_number = display_number;
     }
 
-
+    // Getters & Setters
     public int getOrder_id() { return order_id; }
     public void setOrder_id(int order_id) { this.order_id = order_id; }
 
@@ -44,4 +54,10 @@ public class Entity_Orders {
 
     public int getItems_count() { return items_count; }
     public void setItems_count(int items_count) { this.items_count = items_count; }
+
+    public int getUser_id() { return user_id; }
+    public void setUser_id(int user_id) { this.user_id = user_id; }
+
+    public int getDisplay_number() { return display_number; }
+    public void setDisplay_number(int display_number) { this.display_number = display_number; }
 }

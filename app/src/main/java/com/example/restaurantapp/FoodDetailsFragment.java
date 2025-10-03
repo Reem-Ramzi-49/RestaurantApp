@@ -37,18 +37,33 @@ public class FoodDetailsFragment extends Fragment {
         viewModel = new ViewModelProvider(requireActivity()).get(AppViewModel.class);
 
         if (getArguments() != null) {
-            int dishId = getArguments().getInt("dishId");
-            String name = getArguments().getString("name");
-            String desc = getArguments().getString("desc");
+            int dishId   = getArguments().getInt("dishId");
+
+             int nameRes  = getArguments().getInt("nameRes", 0);
+            String name  = getArguments().getString("name");
+
+            int descRes  = getArguments().getInt("descRes", 0);
+            String desc  = getArguments().getString("desc");
+
             double price = getArguments().getDouble("price");
             int imageRes = getArguments().getInt("imageRes", 0);
             String imageUrl = getArguments().getString("imageUrl");
 
-             binding.foodName.setText(name);
-            binding.foodDetails.setText(desc);
+             if (nameRes != 0) {
+                binding.foodName.setText(getString(nameRes));
+            } else {
+                binding.foodName.setText(name != null ? name : "Unnamed");
+            }
+
+             if (descRes != 0) {
+                binding.foodDetails.setText(getString(descRes));
+            } else {
+                binding.foodDetails.setText(desc != null ? desc : "No description");
+            }
+
             binding.foodPrice.setText(String.format("$%.2f", price));
 
-            if (imageRes != 0) {
+             if (imageRes != 0) {
                 binding.foodImage.setImageResource(imageRes);
             } else if (imageUrl != null && !imageUrl.isEmpty()) {
                 Glide.with(this)
@@ -73,11 +88,10 @@ public class FoodDetailsFragment extends Fragment {
                     String qtyStr = input.getText().toString().trim();
                     int qty = qtyStr.isEmpty() ? 1 : Integer.parseInt(qtyStr);
 
-                     viewModel.getDishById(dishId, dish -> {
+                    viewModel.getDishById(dishId, dish -> {
                         if (dish != null) {
                             viewModel.addToCart(dishId, qty);
 
-                            // 🔹 Toast على MainThread
                             new Handler(Looper.getMainLooper()).post(() ->
                                     Toast.makeText(requireContext(),
                                             getString(R.string.toast_item_added),
@@ -99,17 +113,37 @@ public class FoodDetailsFragment extends Fragment {
 
                 builder.setNegativeButton(getString(R.string.cancel), (dialog, which) -> dialog.dismiss());
 
-                 AlertDialog dialog = builder.create();
+                AlertDialog dialog = builder.create();
                 if (dialog.getWindow() != null) {
                     dialog.getWindow().setBackgroundDrawable(
                             ContextCompat.getDrawable(requireContext(), R.drawable.dialog_bg));
                 }
                 dialog.show();
 
-                 dialog.getButton(AlertDialog.BUTTON_POSITIVE)
+                dialog.getButton(AlertDialog.BUTTON_POSITIVE)
                         .setTextColor(ContextCompat.getColor(requireContext(), R.color.orange));
                 dialog.getButton(AlertDialog.BUTTON_NEGATIVE)
                         .setTextColor(ContextCompat.getColor(requireContext(), R.color.orange));
+            });
+
+              binding.editIcon.setVisibility(View.GONE);
+            int userId = SignInFragment.SessionManager.getUserId(requireContext());
+            viewModel.getUserById(userId).observe(getViewLifecycleOwner(), user -> {
+                if (user != null && user.getRole() == 1) {
+                    binding.editIcon.setVisibility(View.VISIBLE);
+                    binding.editIcon.setOnClickListener(v -> {
+                        Bundle bundle = new Bundle();
+                        bundle.putInt("dishId", dishId);
+
+                        EditDishFragment editFragment = new EditDishFragment();
+                        editFragment.setArguments(bundle);
+
+                        requireActivity().getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.container, editFragment)
+                                .addToBackStack(null)
+                                .commit();
+                    });
+                }
             });
         }
 

@@ -32,8 +32,13 @@ public class DrinksFragment extends Fragment {
             Bundle bundle = new Bundle();
             bundle.putInt("dishId", dish.getDish_id());
 
-             bundle.putString("name", getString(dish.getNameResId()));
-            bundle.putString("desc", getString(dish.getDescResId()));
+            // ✅ تمرير resId للترجمة
+            bundle.putInt("nameRes", dish.getNameResId());
+            bundle.putInt("descRes", dish.getDescResId());
+
+            // ✅ تمرير النصوص كـ fallback
+            bundle.putString("name", dish.getNameText());
+            bundle.putString("desc", dish.getDescText());
 
             bundle.putDouble("price", dish.getPrice());
             bundle.putInt("imageRes", dish.getImageInt());
@@ -51,6 +56,7 @@ public class DrinksFragment extends Fragment {
         binding.recyclerDrinks.setLayoutManager(new GridLayoutManager(getContext(), 2));
         binding.recyclerDrinks.setAdapter(adapter);
 
+        // 🔍 البحث أو العرض العادي
         viewModel.getSearchQuery().observe(getViewLifecycleOwner(), keyword -> {
             if (keyword != null && !keyword.isEmpty()) {
                 viewModel.searchDishesByCategory("Drinks", keyword)

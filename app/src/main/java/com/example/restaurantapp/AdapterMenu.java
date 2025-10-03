@@ -46,11 +46,30 @@ public class AdapterMenu extends RecyclerView.Adapter<AdapterMenu.MenuViewHolder
         Entity_Dishes dish = dishes.get(position);
         Context context = holder.itemView.getContext();
 
-         holder.binding.foodName.setText(context.getString(dish.getNameResId()));
-        holder.binding.foodDesc.setText(context.getString(dish.getDescResId()));
+         if (dish.getNameResId() != 0) {
+            holder.binding.foodName.setText(context.getString(dish.getNameResId()));
+        } else if (dish.getNameText() != null && !dish.getNameText().isEmpty()) {
+            holder.binding.foodName.setText(dish.getNameText());
+        } else {
+            holder.binding.foodName.setText("Unnamed");
+        }
+
+        String fullDesc = null;
+        if (dish.getDescResId() != 0) {
+            fullDesc = context.getString(dish.getDescResId());
+        } else if (dish.getDescText() != null && !dish.getDescText().isEmpty()) {
+            fullDesc = dish.getDescText();
+        }
+
+        if (fullDesc != null) {
+            holder.binding.foodDesc.setText(getShortDescription(fullDesc));
+        } else {
+            holder.binding.foodDesc.setText("No description");
+        }
+
         holder.binding.price.setText(String.format("$%.2f", dish.getPrice()));
 
-         if (dish.getImageUrl() != null && !dish.getImageUrl().isEmpty()) {
+        if (dish.getImageUrl() != null && !dish.getImageUrl().isEmpty()) {
             Glide.with(context)
                     .load(dish.getImageUrl())
                     .placeholder(R.drawable.kinfe)
@@ -62,11 +81,20 @@ public class AdapterMenu extends RecyclerView.Adapter<AdapterMenu.MenuViewHolder
             holder.binding.foodImage.setImageResource(R.drawable.error_image);
         }
 
-         holder.itemView.setOnClickListener(v -> {
+        holder.itemView.setOnClickListener(v -> {
             if (listener != null) {
                 listener.onItemClick(dish);
             }
         });
+    }
+
+    private String getShortDescription(String fullDesc) {
+        String[] words = fullDesc.trim().split("\\s+");
+        if (words.length <= 2) {
+            return fullDesc;
+        } else {
+            return words[0] + " " + words[1] + "...";
+        }
     }
 
     @Override

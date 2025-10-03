@@ -277,5 +277,47 @@
     <string name="dark_light_mode">الوضع الداكن / الفاتح</string>
 
 
+    <string name="orders_management_title">إدارة الطلبات</string>
+    <string name="order_confirmed">تم تأكيد الطلب</string>
+     <string name="order_deleted">تم حذف الطلب</string>
+    <string name="dialog_manage_order">إدارة الطلب</string>
+    <string name="dialog_confirm">تأكيد</string>
+    <string name="dialog_complete">اكتمال</string>
+    <string name="dialog_delete">حذف</string>
+    <string name="dialog_cancel">إلغاء</string>
+
+
+    <string name="dialog_user">المستخدم</string>
+    <string name="dialog_status">الحالة</string>
+
+    <string name="order_confirmed_title">تأكيد الطلب</string>
+    <string name="order_completed_title">اكتمال الطلب</string>
+    <string name="order_confirmed_msg">مرحباً %1$s، تم تأكيد طلبك ✅</string>
+    <string name="order_completed_msg1">مرحباً %1$s، طلبك اكتمل ✅</string>
+
+    <string name="channel_orders">إشعارات الطلبات</string>
+
+    <string name="dish_image">صورة الأكلة</string>
+    <string name="choose_image">اختر صورة</string>
+    <string name="dish_name">اسم الأكلة</string>
+    <string name="dish_description">الوصف</string>
+    <string name="dish_price">السعر</string>
+    <string name="save_dish">حفظ</string>
+
+
+
+    <string name="choose_image_method">اختر طريقة إضافة الصورة</string>
+    <string name="pick_from_gallery">اختيار من المعرض</string>
+    <string name="enter_image_url">إدخال رابط من الإنترنت</string>
+    <string name="enter_url_hint">https://example.com/image.jpg</string>
+
+    <string name="fill_all_fields">املأ جميع الحقول</string>
+    <string name="dish_added">تمت إضافة المنتج</string>
+
+
+    <string name="edit_dish">تعديل الطبق</string>
+    <string name="image_url">رابط الصورة (اختياري)</string>
+    <string name="dish_category">الفئة</string>
+    <string name="update_dish">تحديث</string>
 
 </resources>

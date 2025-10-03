@@ -47,4 +47,15 @@ public interface UsersDao {
 
     @Query("DELETE FROM users")
     void deleteAllUsers();
+
+
+    //ادمن
+    @Query("SELECT * FROM users WHERE role = 1")
+    LiveData<List<Entity_Users>> getAllAdmins();
+
+    @Query("SELECT * FROM users WHERE email = :email AND password = :password AND role = 1 LIMIT 1")
+    LiveData<Entity_Users> adminLogin(String email, String password);
+
+    @Query("SELECT * FROM users WHERE role = 0")
+    LiveData<List<Entity_Users>> getAllNormalUsers();
 }

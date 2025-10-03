@@ -26,12 +26,11 @@ public class Entity_Users {
     @ColumnInfo(name = "address")
     private String address;
 
-//    @ColumnInfo(name = "created_at")
-//    private String createdAt;
-@ColumnInfo(name = "image_uri")
-private String imageUri;
+    @ColumnInfo(name = "image_uri")
+    private String imageUri;
 
-
+     @ColumnInfo(name = "role")
+    private int role;
 
     @Ignore
     public Entity_Users(String name, String email, String password, String phone, String address) {
@@ -40,7 +39,7 @@ private String imageUri;
         this.password = password;
         this.phone = phone;
         this.address = address;
-     }
+    }
 
     public Entity_Users(String name, String email, String password, String phone, String address, String imageUri) {
         this.name = name;
@@ -99,8 +98,19 @@ private String imageUri;
         this.address = address;
     }
 
+    public String getImageUri() {
+        return imageUri;
+    }
 
-    public String getImageUri() { return imageUri; }
-    public void setImageUri(String imageUri) { this.imageUri = imageUri; }
+    public void setImageUri(String imageUri) {
+        this.imageUri = imageUri;
+    }
 
+     public int getRole() {
+        return role;
+    }
+
+    public void setRole(int role) {
+        this.role = role;
+    }
 }

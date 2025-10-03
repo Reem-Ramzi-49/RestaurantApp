@@ -7,6 +7,7 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
@@ -29,6 +30,20 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         viewModel = new ViewModelProvider(requireActivity()).get(AppViewModel.class);
 
+        binding.btnCustom.setVisibility(View.GONE);
+        int userId = SignInFragment.SessionManager.getUserId(requireContext());
+        viewModel.getUserById(userId).observe(getViewLifecycleOwner(), user -> {
+            if (user != null && user.getRole() == 1) {
+                binding.btnCustom.setVisibility(View.VISIBLE);
+                binding.btnCustom.setOnClickListener(v -> {
+                    AddDishFragment addDishFragment = new AddDishFragment();
+                    requireActivity().getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.container, addDishFragment)
+                            .addToBackStack(null)
+                            .commit();
+                });
+            }
+        });
 
         ArrayList<Fragment> fragments = new ArrayList<>();
         fragments.add(new FoodFragment());
@@ -40,23 +55,20 @@ public class HomeFragment extends Fragment {
         tabs.add(getString(R.string.tab_drink));
         tabs.add(getString(R.string.tab_sweet));
 
-
         int[] tabIcons = {R.drawable.food1, R.drawable.drinks2, R.drawable.img};
 
         AdapterHomeMenu adapter = new AdapterHomeMenu(requireActivity(), fragments);
         binding.viewPager.setAdapter(adapter);
 
-         new TabLayoutMediator(binding.tabLayout, binding.viewPager,
+        new TabLayoutMediator(binding.tabLayout, binding.viewPager,
                 (tab, position) -> {
                     ItemTabBinding tabBinding = ItemTabBinding.inflate(LayoutInflater.from(getContext()));
-
                     tabBinding.tabImage.setImageResource(tabIcons[position]);
                     tabBinding.tabText.setText(tabs.get(position));
-
                     tab.setCustomView(tabBinding.getRoot());
                 }).attach();
 
-         binding.tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        binding.tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 View v = tab.getCustomView();
@@ -81,7 +93,7 @@ public class HomeFragment extends Fragment {
             public void onTabReselected(TabLayout.Tab tab) {}
         });
 
-         binding.searchBar.addTextChangedListener(new TextWatcher() {
+        binding.searchBar.addTextChangedListener(new TextWatcher() {
             @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
             @Override public void afterTextChanged(Editable s) {}
             @Override
@@ -90,7 +102,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-         binding.tabLayout.post(() -> {
+        binding.tabLayout.post(() -> {
             TabLayout.Tab firstTab = binding.tabLayout.getTabAt(0);
             if (firstTab != null && firstTab.getCustomView() != null) {
                 firstTab.select();

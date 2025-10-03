@@ -78,5 +78,19 @@
           app:layout_constraintEnd_toEndOf="parent"/>
 
 
+    <Button
+        android:id="@+id/btnCustom"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:text="@string/plus"
+        android:textColor="@android:color/white"
+        android:textSize="22sp"
+        android:backgroundTint="@color/orange"
+         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"
+        app:cornerRadius="8dp"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

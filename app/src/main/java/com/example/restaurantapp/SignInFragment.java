@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.TextUtils;
-import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +28,7 @@ public class SignInFragment extends Fragment {
         binding = FragmentSignInBinding.inflate(inflater, container, false);
         viewModel = new ViewModelProvider(requireActivity()).get(AppViewModel.class);
 
+        // 👁️ toggle password
         binding.togglePassword.setOnClickListener(v -> {
             if (isPasswordVisible) {
                 binding.passwordInput.setInputType(
@@ -46,11 +46,12 @@ public class SignInFragment extends Fragment {
             binding.passwordInput.setSelection(binding.passwordInput.getText().length());
         });
 
+        // ✅ sign in button
         binding.btnSignIn.setOnClickListener(v -> {
-            String email = binding.emailInput.getText().toString().trim();
+            String emailOrUser = binding.emailInput.getText().toString().trim();
             String password = binding.passwordInput.getText().toString().trim();
 
-            if (TextUtils.isEmpty(email) || !Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            if (TextUtils.isEmpty(emailOrUser)) {
                 binding.emailInput.setError(getString(R.string.error_invalid_email));
                 return;
             }
@@ -61,22 +62,44 @@ public class SignInFragment extends Fragment {
 
             binding.btnSignIn.setEnabled(false);
 
-            viewModel.login(email, password).observe(getViewLifecycleOwner(), user -> {
+            // ✅ تحقق من الأدمن الثابت
+            if (emailOrUser.equals("admin") && password.equals("admin123")) {
+                Intent i = new Intent(requireContext(), MainActivity.class);
+                startActivity(i);
+                requireActivity().finish();
+                Toast.makeText(getContext(), "تم تسجيل الدخول كأدمن (ثابت)", Toast.LENGTH_SHORT).show();
+                binding.btnSignIn.setEnabled(true);
+                return;
+            }
+
+            // ✅ تحقق من قاعدة البيانات
+            viewModel.login(emailOrUser, password).observe(getViewLifecycleOwner(), user -> {
                 binding.btnSignIn.setEnabled(true);
 
                 if (user != null) {
                     SessionManager.saveLogin(requireContext(), user.getUser_id());
-                    Intent i = new Intent(requireContext(), MainActivity.class);
-                    i.putExtra("open_tab", "profile");
-                    startActivity(i);
-                    requireActivity().finish();
-                    Toast.makeText(getContext(), getString(R.string.login_success), Toast.LENGTH_SHORT).show();
+
+                    if (user.getRole() == 1) {
+                        // أدمن من قاعدة البيانات
+                        Intent i = new Intent(requireContext(), MainActivity.class);
+                        startActivity(i);
+                        requireActivity().finish();
+                        Toast.makeText(getContext(), "تم تسجيل الدخول كأدمن", Toast.LENGTH_SHORT).show();
+                    } else {
+                        // مستخدم عادي
+                        Intent i = new Intent(requireContext(), MainActivity.class);
+                        i.putExtra("open_tab", "profile");
+                        startActivity(i);
+                        requireActivity().finish();
+                        Toast.makeText(getContext(), getString(R.string.login_success), Toast.LENGTH_SHORT).show();
+                    }
                 } else {
                     Toast.makeText(getContext(), getString(R.string.login_failed), Toast.LENGTH_SHORT).show();
                 }
             });
         });
 
+        // الانتقال لتسجيل جديد
         binding.signUp.setOnClickListener(v -> {
             if (requireActivity() instanceof Authentication) {
                 ((Authentication) requireActivity()).goToSignUPTab();
@@ -86,6 +109,7 @@ public class SignInFragment extends Fragment {
         return binding.getRoot();
     }
 
+    // ✅ SessionManager
     public static class SessionManager {
         private static final String PREF = "session";
         private static final String KEY_LOGGED_IN = "logged_in";

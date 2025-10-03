@@ -1,10 +1,12 @@
 package com.example.restaurantapp;
 
 import android.app.Application;
+
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+
 import java.util.List;
 import java.util.function.Consumer;
 
@@ -21,33 +23,31 @@ public class AppViewModel extends AndroidViewModel {
      public void setSearchQuery(String query) { searchQuery.setValue(query); }
     public LiveData<String> getSearchQuery() { return searchQuery; }
 
-     public LiveData<List<Entity_Users>> getAllUsers() { return repo.getAllUsers(); }
-    public LiveData<Entity_Users> login(String email, String password) { return repo.login(email, password); }
-    public void insertUser(Entity_Users user) { repo.insertUser(user); }
-    public void updateUserProfile(int userId, String name, String phone, String address) { repo.updateUserProfile(userId, name, phone, address); }
-    void updateUserProfile1(int userId,
-                            String newName,
-                            String newEmail,
-                            String newPhone,
-                            String newAddress,
-                            String newPassword,
-                            String newImageUri) {
-        repo.updateUserProfile1(userId, newName, newEmail, newPhone, newAddress, newPassword, newImageUri);
-    }
-    void updateUser(Entity_Users user) { repo.updateUser(user); }
-    LiveData<Entity_Users> getUserById(int userId){ return repo.getUserById(userId); }
-
-     public LiveData<List<Entity_Dishes>> getAllDishes() { return repo.getAllDishes(); }
-    public LiveData<List<Entity_Dishes>> getDishesByCategory(String category) { return repo.getDishesByCategory(category); }
-
-     public LiveData<List<Entity_Dishes>> searchDishes(String keyword) { return repo.searchDishes(keyword); }
-
-     public LiveData<List<Entity_Dishes>> searchDishesByCategory(String category, String keyword) {
+    public LiveData<List<Entity_Dishes>> searchDishesByCategory(String category, String keyword) {
         return repo.searchDishesByCategory(category, keyword);
     }
 
+     public LiveData<List<Entity_Users>> getAllUsers() { return repo.getAllUsers(); }
+    public LiveData<Entity_Users> login(String email, String password) { return repo.login(email, password); }
+    public LiveData<Entity_Users> adminLogin(String email, String password) { return repo.adminLogin(email, password); }
+    public void insertUser(Entity_Users user) { repo.insertUser(user); }
+    public void updateUserProfile(int userId, String name, String phone, String address) {
+        repo.updateUserProfile(userId, name, phone, address);
+    }
+    void updateUserProfile1(int userId, String newName, String newEmail, String newPhone,
+                            String newAddress, String newPassword, String newImageUri) {
+        repo.updateUserProfile1(userId, newName, newEmail, newPhone, newAddress, newPassword, newImageUri);
+    }
+    void updateUser(Entity_Users user) { repo.updateUser(user); }
+    public LiveData<Entity_Users> getUserById(int userId) { return repo.getUserById(userId); }
+
+     public LiveData<List<Entity_Dishes>> getAllDishes() { return repo.getAllDishes(); }
+    public LiveData<List<Entity_Dishes>> getDishesByCategory(String category) { return repo.getDishesByCategory(category); }
     public void insertDish(Entity_Dishes dish) { repo.insertDish(dish); }
     public void getDishById(int dishId, Consumer<Entity_Dishes> callback) { repo.getDishById(dishId, callback); }
+
+     public void updateDish(Entity_Dishes dish) { repo.updateDish(dish); }
+
 
      public LiveData<List<CartItemDTO>> observeCartItems() { return repo.observeCartItems(); }
     public LiveData<Double> observeCartTotal() { return repo.observeCartTotal(); }
@@ -57,9 +57,17 @@ public class AppViewModel extends AndroidViewModel {
     public void setCartQuantity(int cartId, int qty) { repo.setCartQuantity(cartId, qty); }
     public void deleteCartItem(int cartId) { repo.deleteCartItem(cartId); }
     public void clearCart() { repo.clearCart(); }
-    public void placeOrderNow(String status) { repo.placeOrderFromCart(status); }
+    public void placeOrderNow(String status, int userId) { repo.placeOrderFromCart(status, userId); }
 
      public LiveData<List<Entity_Orders>> getAllOrders() { return repo.getAllOrders(); }
+    public LiveData<List<Entity_Orders>> getPendingOrders() { return repo.getPendingOrders(); }
+    public LiveData<List<Entity_Orders>> getOrdersByUser(int userId) { return repo.getOrdersByUser(userId); }
+    public LiveData<List<Entity_Orders>> getOrdersByUserAndStatus(int userId, String status) {
+        return repo.getOrdersByUserAndStatus(userId, status);
+    }
     public LiveData<List<Entity_Orders>> getOrdersByStatus(String status) { return repo.getOrdersByStatus(status); }
     public void updateOrderStatus(int orderId, String newStatus) { repo.updateOrderStatus(orderId, newStatus); }
+    public void deleteOrder(int orderId) { repo.deleteOrder(orderId); }
+    public LiveData<List<OrderWithUser>> getAllOrdersWithUser() { return repo.getAllOrdersWithUser(); }
+    public LiveData<List<OrderWithUser>> getActiveOrdersWithUser() { return repo.getActiveOrdersWithUser(); }
 }
