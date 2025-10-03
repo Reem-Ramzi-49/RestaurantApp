@@ -4,8 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="orange">#FF6F4C</color>
 
-    <!-- الوضع الليلي -->
-    <color name="background">#121212</color>
+     <color name="background">#121212</color>
     <color name="onBackground">#FFFFFF</color>
 
     <color name="gray">#BBBBBB</color>
@@ -95,7 +94,7 @@
 
 
 
-    <color name="cart_item_bg">#2C2C2C</color> <!-- رمادي غامق بدال الأسود الكامل -->
+    <color name="cart_item_bg">#2C2C2C</color>
     <color name="cart_item_text_primary">#FFFFFF</color>
     <color name="cart_item_text_secondary">#AAAAAA</color>
 
