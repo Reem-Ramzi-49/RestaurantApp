@@ -28,8 +28,7 @@ public class SignInFragment extends Fragment {
         binding = FragmentSignInBinding.inflate(inflater, container, false);
         viewModel = new ViewModelProvider(requireActivity()).get(AppViewModel.class);
 
-        // 👁️ toggle password
-        binding.togglePassword.setOnClickListener(v -> {
+         binding.togglePassword.setOnClickListener(v -> {
             if (isPasswordVisible) {
                 binding.passwordInput.setInputType(
                         InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD
@@ -46,8 +45,7 @@ public class SignInFragment extends Fragment {
             binding.passwordInput.setSelection(binding.passwordInput.getText().length());
         });
 
-        // ✅ sign in button
-        binding.btnSignIn.setOnClickListener(v -> {
+         binding.btnSignIn.setOnClickListener(v -> {
             String emailOrUser = binding.emailInput.getText().toString().trim();
             String password = binding.passwordInput.getText().toString().trim();
 
@@ -62,8 +60,7 @@ public class SignInFragment extends Fragment {
 
             binding.btnSignIn.setEnabled(false);
 
-            // ✅ تحقق من الأدمن الثابت
-            if (emailOrUser.equals("admin") && password.equals("admin123")) {
+             if (emailOrUser.equals("admin") && password.equals("admin123")) {
                 Intent i = new Intent(requireContext(), MainActivity.class);
                 startActivity(i);
                 requireActivity().finish();
@@ -72,15 +69,14 @@ public class SignInFragment extends Fragment {
                 return;
             }
 
-            // ✅ تحقق من قاعدة البيانات
-            viewModel.login(emailOrUser, password).observe(getViewLifecycleOwner(), user -> {
+             viewModel.login(emailOrUser, password).observe(getViewLifecycleOwner(), user -> {
                 binding.btnSignIn.setEnabled(true);
 
                 if (user != null) {
                     SessionManager.saveLogin(requireContext(), user.getUser_id());
 
                     if (user.getRole() == 1) {
-                        // أدمن من قاعدة البيانات
+                        // أدمن
                         Intent i = new Intent(requireContext(), MainActivity.class);
                         startActivity(i);
                         requireActivity().finish();
@@ -109,8 +105,7 @@ public class SignInFragment extends Fragment {
         return binding.getRoot();
     }
 
-    // ✅ SessionManager
-    public static class SessionManager {
+     public static class SessionManager {
         private static final String PREF = "session";
         private static final String KEY_LOGGED_IN = "logged_in";
         private static final String KEY_USER_ID = "user_id";

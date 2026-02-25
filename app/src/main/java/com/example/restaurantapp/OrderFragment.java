@@ -37,7 +37,7 @@ public class OrderFragment extends Fragment {
         viewModel.getUserById(userId).observe(getViewLifecycleOwner(), user -> {
             if (user != null) {
                 if (user.getRole() == 1) {
-                    // ✅ أدمن
+                    //  أدمن
                     adapter = new AdapterOrders((AdapterOrders.OnAdminOrderClickListener) order -> {
                         new androidx.appcompat.app.AlertDialog.Builder(requireContext())
                                 .setTitle("إدارة الطلب #" + order.getDisplay_number())
