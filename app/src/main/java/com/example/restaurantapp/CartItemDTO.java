@@ -3,7 +3,7 @@ package com.example.restaurantapp;
 import androidx.room.ColumnInfo;
 
 public class CartItemDTO {
-
+//1
    @ColumnInfo(name = "cartId")
    public int cartId;
 
