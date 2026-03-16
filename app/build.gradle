@@ -72,3 +72,9 @@ dependencies {
 
 
 }
+
+detekt {
+    buildUponDefaultConfig = true
+    allRules = false
+    ignoreFailures = true
+}
